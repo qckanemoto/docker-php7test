@@ -1,7 +1,15 @@
 FROM php:7.0-cli
 
+RUN apt-get update
+
+# install npm
+RUN apt-get install -y nodejs-legacy npm
+
+# install gulp, grunt
+RUN npm install -g gulp grunt-cli
+
 # install php extensions
-RUN apt-get update && apt-get install -y libicu-dev libmcrypt-dev
+RUN apt-get install -y libicu-dev libmcrypt-dev
 RUN docker-php-ext-install intl mcrypt mbstring opcache
 
 # configure php.ini
