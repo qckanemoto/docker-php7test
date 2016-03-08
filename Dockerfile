@@ -3,7 +3,10 @@ FROM php:7.0-cli
 RUN apt-get update
 
 # install npm
-RUN apt-get install -y nodejs npm
+RUN apt-get install -y nodejs-legacy npm
+
+# install gulp, grunt
+RUN npm install -g gulp grunt-cli
 
 # install php extensions
 RUN apt-get install -y libicu-dev libmcrypt-dev
