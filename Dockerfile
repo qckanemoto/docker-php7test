@@ -10,7 +10,7 @@ RUN npm install -g gulp grunt-cli
 
 # install php extensions
 RUN apt-get install -y libicu-dev libmcrypt-dev
-RUN docker-php-ext-install intl mcrypt mbstring opcache
+RUN docker-php-ext-install intl mcrypt mbstring opcache soap
 
 # configure php.ini
 # RUN echo << EOS > /usr/local/etc/php/php.ini
